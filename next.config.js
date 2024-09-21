@@ -1,3 +1,12 @@
+import { fileURLToPath } from "node:url";
+import createJiti from "jiti";
+
+const jiti = createJiti(fileURLToPath(import.meta.url));
+
+// Import env here to validate during build. Using jiti we can import .ts files :)
+jiti("./src/env/client");
+jiti("./src/env/server");
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
@@ -9,12 +18,11 @@ const nextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: 'https',
-        //Add aws s3 bucket hostname
-        hostname: '<bucket_url/hostname>', //example - youraws.s3.ap-south-2.amazonaws.com
+        protocol: "https",
+        hostname: "job-board.b-cdn.net", // Change this to your CDN domain
       },
     ],
   },
 };
 
-module.exports = nextConfig;
+export default nextConfig; // ES module export

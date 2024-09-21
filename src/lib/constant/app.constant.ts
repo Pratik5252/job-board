@@ -12,8 +12,9 @@ export const navbar = [
   },
   // todo: add actual path
   { id: 3, label: 'Internship', path: '/' },
-  { id: 4, label: 'Testimonials', path: '/' },
-  { id: 5, label: 'FAQs', path: '/' },
+  { id: 4, label: 'Testimonials', path: APP_PATHS.TESTIMONIALS },
+  { id: 5, label: 'FAQs', path: APP_PATHS.FAQS },
+  { id: 6, label: 'Post a Job', path: APP_PATHS.POST_JOB },
 ];
 
 export const socials: {
@@ -54,6 +55,6 @@ export const footerLinks = {
   '100xlegal': [
     { label: 'Privacy Policy', href: '' },
     { label: 'Terms of Service', href: '' },
-    { label: 'Desclaimer', href: '' },
+    { label: 'Disclaimer', href: '' },
   ],
 };
